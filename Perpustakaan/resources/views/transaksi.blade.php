@@ -2,6 +2,7 @@
 
 @section('title', 'Transaksi')
 @section('content')
+        
         <div class="card" style="width: 35rem">
             <div class="card-body">
                 <h5 class="card-title">Transaction</h5>

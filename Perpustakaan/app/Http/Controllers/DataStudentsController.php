@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\DataStudent;
-use \App\DataClass;
 
 class DataStudentsController extends Controller
 {
@@ -15,7 +14,7 @@ class DataStudentsController extends Controller
      */
     public function index()
     {
-        $students = DataStudent::with('class')->get();
+        $students = DataStudent::with('majors')->with('class')->get();
         return view('dataStudents', ['students' => $students]);
     }
 
@@ -82,6 +81,7 @@ class DataStudentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DataStudent::destroy($id);
+        return redirect('/dataStudent')->with('status', 'Student Data Successfully Deleted');
     }
 }

@@ -13,8 +13,9 @@ class DataStudent extends Model
     {
         return $this->hasMany('App\DataClass', 'kode_kelas', 'kelas_kode_kelas');
     }
-    public function class()
+
+    public function majors()
     {
-        return $this->hasMany('App\DataClass', 'kode_kelas', 'kelas_kode_kelas');
+        return $this->hasMany('App\DataMajors', 'kode_jurusan', 'jurusan_kode_jurusan');
     }
 }
