@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('transaksi');
-});
+Route::get('/', 'TransaksiController@index');
+Route::get('/dataStudent', 'DataStudentsController@index');
