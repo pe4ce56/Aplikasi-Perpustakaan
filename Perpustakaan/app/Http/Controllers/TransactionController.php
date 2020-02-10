@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TransaksiController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        return view('transaksi');
+        return view('transaction');
     }
 
     /**

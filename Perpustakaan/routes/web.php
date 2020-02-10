@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'TransaksiController@index');
+Route::get('/', 'TransactionController@index');
 Route::get('/dataStudent', 'DataStudentsController@index');
 Route::delete('/dataStudent/{student}', 'DataStudentsController@destroy');
