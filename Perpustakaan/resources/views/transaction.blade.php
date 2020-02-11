@@ -10,23 +10,24 @@
                 <div class="row">
                     <div class="form-group col">
                             <label for="borrowed-date">Borrowed Date</label>
-                            <input type="date" class="form-control" id="borrowed-date">
+                    <input type="date" class="form-control" id="borrowed-date" v-bind:value="borrowedDate">
                     </div>
                     <div class="form-group col">
                         <label for="return-date">Return Date</label>
-                        <input type="date" class="form-control" id="return-date" >
+                        <input type="date" class="form-control" id="return-date" v-bind:value="returnedDate">
                 </div>
                 </div>
                 <div class="form-group row">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
+                  <label for="staticEmail" class="col-sm-3 col-form-label">Customer's ID</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="customer-id" v-model="name"  v-on:keyup.13="enter">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
+                  <label for="inputPassword" class="col-sm-3 col-form-label">
+                    Customer's Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="customer-name" v-bind:value="name">
                   </div>
                 </div>
               </form>
