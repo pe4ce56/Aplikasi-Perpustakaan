@@ -1,0 +1,21 @@
+body{
+    background-color:#f0f0ee;
+}
+
+.loading{
+    width: 10rem;
+    height: 10rem;
+    border-width: 1.5rem;
+
+}
+
+.data{
+    width: 92%;
+    position: absolute;
+    top: 20;
+    z-index: 999;
+}
+
+table tbody{
+    background-color: #f5f6fc;
+}

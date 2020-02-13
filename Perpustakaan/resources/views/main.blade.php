@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{url('css/app.css')}}">
+  <link rel="stylesheet" href="{{url('css/style.css')}}">
     <title>@yield('title')</title>
   </head>
   <body>
@@ -26,13 +27,22 @@
           </ul>
         </div>
       </nav>
-    <div class="container-fluid mt-4" id="app">
+    <div class="container-fluid" id="app">
+      <div v-if="loading">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary loading" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+      </div>
+      <div v-else>
             @yield('content')
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="{{url('js/app.js')}}"></script>
-  <script src="{{url('assets/js/App.js')}}"></script>
+    <script src="{{url('js/app.js')}}"></script>
+    <script src="{{url('assets/js/App.js')}}"></script>
   </body>
 </html> 

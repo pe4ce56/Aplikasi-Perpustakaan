@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use \App\DataStudent;
 
-class DataStudentsController extends Controller
+class StudentsController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +16,7 @@ class DataStudentsController extends Controller
     public function index()
     {
         $students = DataStudent::with('majors')->with('class')->get();
-        return view('dataStudents', ['students' => $students]);
+        return response()->json($students);
     }
 
     /**
@@ -82,7 +82,6 @@ class DataStudentsController extends Controller
      */
     public function destroy($id)
     {
-        DataStudent::destroy($id);
-        return redirect('/dataStudent')->with('status', 'Student Data Successfully Deleted');
+        //
     }
 }

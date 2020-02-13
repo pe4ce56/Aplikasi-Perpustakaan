@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/API/students', 'API\StudentsController@index');
+Route::get('/API/books', 'API\BooksController@index');
 Route::get('/', 'TransactionController@index');
 Route::get('/dataStudent', 'DataStudentsController@index');
 Route::delete('/dataStudent/{student}', 'DataStudentsController@destroy');
