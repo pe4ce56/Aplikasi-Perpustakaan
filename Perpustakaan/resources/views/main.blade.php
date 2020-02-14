@@ -11,7 +11,19 @@
     <title>@yield('title')</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="app">
+      
+      <div v-if="loading">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary loading" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+      </div>
+     </div>
+    <div v-else>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <a class="navbar-brand" href="#">Library application </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,19 +39,12 @@
           </ul>
         </div>
       </nav>
-    <div class="container-fluid" id="app">
-      <div v-if="loading">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border text-primary loading" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-        </div>
+      <div class="container-fluid">
+        @yield('content')  
       </div>
-      <div v-else>
-            @yield('content')
+      
       </div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{{url('js/app.js')}}"></script>

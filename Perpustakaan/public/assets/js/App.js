@@ -1,9 +1,10 @@
 
 date = new Date();
 Vue.component('inputbooksid', {
-    props: ['bookid','index'],
-    template: '<input type="text" name="bookid[]" v-model="bookid">'
-  })
+    props: ['bookid'],
+    template: '<input type="hidden" name="bookid[]" v-model="bookid">'
+});
+
 var app = new Vue({
 
     el: '#app',
@@ -18,6 +19,7 @@ var app = new Vue({
 
         bookID: '',
         books: [],
+        amountOfBooks: [],
         searchBook: [],
 
         newTransactions: []
@@ -57,19 +59,25 @@ var app = new Vue({
         searchingBook() {
             if (this.bookID) {
                 this.searchBook = this.books.filter(search => {
-                    return search.id_buku.toString().includes(this.bookID.toString());
+                    return search.id_buku.toString().toLowerCase().includes(this.bookID.toString().toLowerCase());
                 })
             } else {
                 this.searchBook = ''
             }
         },
         enteredDataCustomer() {
-            this.customerNIS = this.searchStudent[0].NIS;
-            this.customerName = this.searchStudent[0].nama;
-            this.$refs.bookID.focus();
+            if (this.searchStudent) {
+                this.customerNIS = this.searchStudent[0].NIS;
+                this.customerName = this.searchStudent[0].nama;
+                this.$refs.bookID.focus();
+            }
         },
         enteredDataBook() {
-            this.newTransactions.push(this.searchBook[0]);
+            if (this.searchBook[0]) {
+                this.newTransactions.push(this.searchBook[0]);
+                this.amountOfBooks.push(0); 
+                this.bookID = ''
+            }
         }
     },
     mounted() {

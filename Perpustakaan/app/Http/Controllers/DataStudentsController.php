@@ -83,6 +83,6 @@ class DataStudentsController extends Controller
     public function destroy($id)
     {
         DataStudent::destroy($id);
-        return redirect('/dataStudent')->with('status', 'Student Data Successfully Deleted');
+        return redirect('/dataStudent')->with('status', 'Transaction Successfully Saved');
     }
 }

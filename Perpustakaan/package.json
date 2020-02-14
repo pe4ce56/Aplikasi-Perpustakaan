@@ -34,6 +34,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.12.1",
         "vue": "^2.6.11"
     }
 }
