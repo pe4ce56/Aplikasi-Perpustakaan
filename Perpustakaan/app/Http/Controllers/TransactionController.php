@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use \App\Transaction;
+
 class TransactionController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view('transaction');
+        return view('transaction', ['active' => 'transasction']);
     }
 
     /**
@@ -24,7 +25,6 @@ class TransactionController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -36,20 +36,20 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $transaction = new Transaction;
-        $transaction->tgl_peminjaman = $request->borrowedDate; 
-        $transaction->tgl_peminjaman = $request->borrowedDate; 
+        $transaction->tgl_peminjaman = $request->borrowedDate;
+        $transaction->tgl_peminjaman = $request->borrowedDate;
         $transaction->tgl_kembali = $request->returnedDate;
         $transaction->tbl_siswa_NIS = $request->customerID;
-        $transaction->tbl_operator_id_operator = $request->operatorID;  
-        $transaction->save();    
+        $transaction->tbl_operator_id_operator = $request->operatorID;
+        $transaction->save();
 
         $id_transaction = DB::table('tbl_transaksi')->select('id_transaksi')->orderByDesc('id_transaksi')->first();
-        foreach($request->bookid as $i=>$idBuku){
+        foreach ($request->bookid as $i => $idBuku) {
             DB::table('tbl_detail_transaksi')->insert(
                 [
                     'tbl_transaksi_id_transaksi' => $id_transaction->id_transaksi,
                     'tbl_buku_id_buku' => $idBuku,
-                    'jumlah_buku' => $request->bookid[$i],
+                    'jumlah_buku' => $request->amountOfBooks[$i],
                     'status' => 'Belum Kembali'
 
                 ]

@@ -10,12 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Route;
+
+Route::view('/', 'dashboard', ['active' => 'dashboard']);
 Route::get('/API/students', 'API\StudentsController@index');
 Route::get('/API/books', 'API\BooksController@index');
 
-Route::get('/', 'TransactionController@index');
 Route::get('/transaction', 'TransactionController@index');
-Route::post('/transaction','TransactionController@store');
+Route::post('/transaction', 'TransactionController@store');
 
-Route::get('/dataStudent', 'DataStudentsController@index');
-Route::delete('/dataStudent/{student}', 'DataStudentsController@destroy');
+Route::resource('/students', 'StudentsController');

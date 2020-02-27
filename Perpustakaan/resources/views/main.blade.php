@@ -12,7 +12,6 @@
   </head>
   <body>
     <div id="app">
-      
       <div v-if="loading">
         <div class="container-fluid">
           <div class="d-flex justify-content-center">
@@ -30,11 +29,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item ">
             <a class="nav-link" href="{{url("/dataStudent")}}">Data Students</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Transaction</a>
+              <a class="nav-link" href="{{url("/transaction")}}">Transaction</a>
             </li>
           </ul>
         </div>
@@ -48,6 +47,5 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{{url('js/app.js')}}"></script>
-    <script src="{{url('assets/js/App.js')}}"></script>
   </body>
 </html> 

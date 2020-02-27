@@ -1,9 +1,4 @@
-
 date = new Date();
-Vue.component('inputbooksid', {
-    props: ['bookid'],
-    template: '<input type="hidden" name="bookid[]" v-model="bookid">'
-});
 
 var app = new Vue({
 
@@ -26,15 +21,15 @@ var app = new Vue({
     },
     computed: {
         borrowedDate() {
-            return date.getFullYear() + '-'
-                + ('0' + (date.getMonth() + 1)).slice(-2) + '-'
-                + ('0' + date.getDate()).slice(-2);
+            return date.getFullYear() + '-' +
+                ('0' + (date.getMonth() + 1)).slice(-2) + '-' +
+                ('0' + date.getDate()).slice(-2);
         },
         returnedDate() {
             date.setDate(date.getDate() + 10);
-            return date.getFullYear() + '-'
-                + ('0' + (date.getMonth() + 1)).slice(-2) + '-'
-                + ('0' + date.getDate()).slice(-2);
+            return date.getFullYear() + '-' +
+                ('0' + (date.getMonth() + 1)).slice(-2) + '-' +
+                ('0' + date.getDate()).slice(-2);
         },
         getCustomers() {
             return this.searchStudent;
@@ -42,7 +37,7 @@ var app = new Vue({
         getBooks() {
             return this.searchBook;
         },
-        getNewTransactions(){
+        getNewTransactions() {
             return this.newTransactions;
         }
     },
@@ -75,7 +70,7 @@ var app = new Vue({
         enteredDataBook() {
             if (this.searchBook[0]) {
                 this.newTransactions.push(this.searchBook[0]);
-                this.amountOfBooks.push(0); 
+                this.amountOfBooks.push(0);
                 this.bookID = ''
             }
         }
