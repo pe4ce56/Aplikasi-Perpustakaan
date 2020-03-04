@@ -14,13 +14,16 @@
     <!-- Custom CSS -->
     <link href="{{url('vendor/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
     <!-- Custom CSS -->
+    
     <link href="{{url('vendor/dist/css/style.min.css')}}" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link href="{{url('css/style.css')}}" rel="stylesheet">
     @yield('header')
 
 </head>
 
 <body>
+    
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -61,8 +64,8 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                All Rights Reserved by Adminmart. Designed and Developed by <a
-                    href="https://wrappixel.com">WrapPixel</a>.
+                Copyrigth <i class="far fa-copyright"></i> 2020 <a
+                    href="https://www.instagram.com/damaideosaputra">Damai</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -81,9 +84,10 @@
     <!-- ============================================================== -->
 
     <script src="{{url('js/app.js')}}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    @yield('footer')
     
-    <!-- apps -->
-    <!-- apps -->
     <script src="{{url('vendor/dist/js/app-style-switcher.js')}}"></script>
     <script src="{{url('vendor/dist/js/feather.min.js')}}"></script>
     <script src="{{url('vendor/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
@@ -91,8 +95,9 @@
     <!--Custom JavaScript -->
     <script src="{{url('vendor/dist/js/custom.min.js')}}"></script>
     <!--This page javaScript -->
+    
 
-    @yield('footer')
+    
 
 </body>
 
